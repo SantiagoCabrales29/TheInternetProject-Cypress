@@ -15,6 +15,8 @@ describe("Tests cases for Ad/Remove Elements page",()=>{
         for(var i=0; i<value2; i++){
             cy.get('button[onclick="addElement()"]').click()
         }
+        
+        cy.get('button.added-manually[onclick="deleteElement()"]').should('have.length.greaterThan',1)
     })
 
     it("Delete elements from page",() => {
@@ -30,7 +32,8 @@ describe("Tests cases for Ad/Remove Elements page",()=>{
             $el,index,$list) =>{
                 cy.wrap($el).click()
 
-            }
+            }    
         )
+        cy.get('button.added-manually[onclick="deleteElement()"]').should('have.length',0)
     })
 })
