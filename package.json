@@ -1,0 +1,23 @@
+{
+  "name": "theinternetproject-cypress",
+  "version": "1.0.0",
+  "description": "A test suite for the Internet Heroku app that you can find here: https://the-internet.herokuapp.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantiagoCabrales29/TheInternetProject-Cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SantiagoCabrales29/TheInternetProject-Cypress/issues"
+  },
+  "homepage": "https://github.com/SantiagoCabrales29/TheInternetProject-Cypress#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  }
+}
