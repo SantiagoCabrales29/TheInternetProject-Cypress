@@ -32,7 +32,7 @@ describe('', ()=>{
     expression. I use the match method to get all the groups that match the regular expression
     and use the index 1 to get the specific text we are looking for.
     */
-    it.only('Successful Authentication getting credentials from text using REGEX Expressions', ()=>{
+    it('Successful Authentication getting credentials from text using REGEX Expressions', ()=>{
         var myArray, username, password
         cy.get('.subheader').then((message) =>{
             var userNameRegex = /Enter (.+?) /
