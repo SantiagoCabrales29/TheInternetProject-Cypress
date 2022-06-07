@@ -1,10 +1,7 @@
 /// <reference types="Cypress" />
 
 import 'cypress-iframe';
-//const faker = require("faker");
-
 import { faker } from '@faker-js/faker';
-//import { faker } from '@faker-js/faker';
 
 describe('Iframe Page Tests', ()=>{
 
@@ -13,16 +10,17 @@ describe('Iframe Page Tests', ()=>{
         cy.navigate('Frames')
     })
 
-    it.only('Interacting successfully with the IFrame',()=>{
+    it('Interacting successfully with the IFrame',()=>{
         cy.contains('iFrame').click()
         cy.frameLoaded('#mce_0_ifr')
+        /* 
+        Lines 21 and 36 are used to fix the flakiness when trying to get the length of the default message
+        If I tried to interact with the default message without this line I wasn't able to get the length
+        of the message. I realized that if we interact with the iframe first then I'm able to get the right length
+        */
+        cy.iframe().type(' ')
         cy.iframe().then((message)=>{
-            cy.log(message.text())
-            cy.log(message.text().length)
-            // for(let i=0; i<message.text().length; i++){
-            //     cy.iframe().type('{backspace}')
-            // }
-            for(let i=0; i<23; i++){
+            for(let i=0; i<message.text().length; i++){
                 cy.iframe().type('{backspace}')
             }
         })
@@ -35,15 +33,17 @@ describe('Iframe Page Tests', ()=>{
     it('Interacting successfully with the IFrame using Faker',()=>{
         cy.contains('iFrame').click()
         cy.frameLoaded('#mce_0_ifr')
+        cy.iframe().type(' ')
         cy.iframe().then((message)=>{
-            cy.log(message.text().length)
             for(let i=0; i<message.text().length; i++){
                 cy.iframe().type('{backspace}')
             }
         })
-        cy.iframe().type(`A Text from Faker: ${faker.random.words(5)}`)
+        let randomWords = faker.random.words(5) 
+        cy.iframe().type(`A Text from Faker: ${randomWords}`)
         cy.iframe().then((message)=>{
             expect(message.text()).not.be.equal('Your content goes here.')
+            expect(message.text()).contains(randomWords)
         })
     })
 })
