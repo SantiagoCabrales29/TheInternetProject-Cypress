@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/SantiagoCabrales29/TheInternetProject-Cypress#readme",
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "cypress-iframe": "^1.0.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^6.3.1"
   }
 }
