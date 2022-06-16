@@ -8,8 +8,6 @@ describe("Tests cases for Ad/Remove Elements page",()=>{
     })
 
     it("Add elements to page",() => {
-        //cy.visit("")
-        //cy.contains('Add/Remove').click()
 
         let value2 = Math.random() * 20;
         for(var i=0; i<value2; i++){
@@ -20,8 +18,6 @@ describe("Tests cases for Ad/Remove Elements page",()=>{
     })
 
     it("Delete elements from page",() => {
-        cy.visit("")
-        cy.contains('Add/Remove').click()
 
         let value2 = Math.random() * 20;
         for(var i=0; i<value2; i++){
