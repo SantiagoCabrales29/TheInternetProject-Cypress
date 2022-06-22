@@ -4,13 +4,13 @@
   "description": "A test suite for the Internet Heroku app that you can find here: https://the-internet.herokuapp.com/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "node_modules/.bin/cypress open"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SantiagoCabrales29/TheInternetProject-Cypress.git"
   },
-  "keywords": [],
+  "keywords": ["testing", "the-internet", "qa"],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/SantiagoCabrales29/TheInternetProject-Cypress#readme",
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "cypress-iframe": "^1.0.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^6.3.1"
   }
 }
