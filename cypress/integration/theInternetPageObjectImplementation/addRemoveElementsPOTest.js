@@ -1,7 +1,7 @@
 ///<reference types="Cypress"/>
 
-import { AddRemovePage } from '../../page-objects/add-remove-page'
-import {HomePage} from '../../page-objects/home-page'
+import { AddRemovePage } from '../../support/page-objects/add-remove-page'
+import {HomePage} from '../../support/page-objects/home-page'
 
 describe('Add Remove ', ()=> {
     const homePage = new HomePage()
@@ -21,7 +21,7 @@ describe('Add Remove ', ()=> {
         for(var i=0; i<value2; i++){
             addRemovePage.getAddElementButton().click()
         }
-        addRemovePage.getListOfAddedElements().should('have.length.greaterThan',1)
+        addRemovePage.getListOfAddedElements().should('have.length.greaterThan',0)
     })
 
     it('Delete all the Elements to the Page', () => {

@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('', ()=>{
+describe('Tests for Form Authentication Page', ()=>{
 
     beforeEach(()=>{
        cy.navigate('Form Authentication')

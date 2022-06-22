@@ -14,7 +14,7 @@ describe("Tests cases for Ad/Remove Elements page",()=>{
             cy.get('button[onclick="addElement()"]').click()
         }
         
-        cy.get('button.added-manually[onclick="deleteElement()"]').should('have.length.greaterThan',1)
+        cy.get('button.added-manually[onclick="deleteElement()"]').should('have.length.greaterThan',0)
     })
 
     it("Delete elements from page",() => {

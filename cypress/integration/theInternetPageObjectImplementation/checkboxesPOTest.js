@@ -1,7 +1,7 @@
 ///<reference types="Cypress"/>
 
-import { HomePage } from "../../page-objects/home-page"
-import { CheckboxesPage } from "../../page-objects/checkboxes-page"
+import { HomePage } from "../../support/page-objects/home-page"
+import { CheckboxesPage } from "../../support/page-objects/checkboxes-page"
 
 
 describe("Tests cases for Ad/Remove Elements page",()=>{
